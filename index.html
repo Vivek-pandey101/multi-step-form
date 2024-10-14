@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Sidebar start -->
+
+      <div class="sidebar">
+        <div id="number">
+          <div>
+            <span id="Step">Step 1</span><span id="plan">Your info</span>
+          </div>
+        </div>
+        <div id="number">
+          <div>
+            <span id="Step">Step 2</span> <span id="plan">Select plan</span>
+          </div>
+        </div>
+        <div id="number">
+          <div>
+            <span id="Step">Step 3</span> <span id="plan">add-ones</span>
+          </div>
+        </div>
+        <div id="number">
+          <div>
+            <span id="Step">Step 4</span> <span id="plan">Summary</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar end -->
+
+      <!-- Step 1 start -->
+
+      <div class="container-one">
+        <h1>Personal info</h1>
+        <p>Please provide your name, email address, and phone number.</p>
+        <div>
+          <label for="name">Name </label>
+          <input type="text" id="name" placeholder="e.g. Stephen King" />
+        </div>
+        <div>
+          <label for="email">Email Address </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="e.g. stephenking@lorem.com"
+          />
+        </div>
+        <div>
+          <label for="number">Phone Number </label>
+          <input type="number" placeholder="e.g. +91 234 567 890" id="number" />
+        </div>
+
+        <button id="next" class="One">Next Step</button>
+      </div>
+
+      <!-- Step 1 end -->
+
+      <!-- Step 2 start -->
+
+      <div class="container-two">
+        <h1>Select your plan</h1>
+        <p>You have the option of monthly or yearly billing.</p>
+        <div id="plans">
+          <div class="plan">
+            <input type="checkbox" id="arcade-plan" style="display: none" />
+            <label for="arcade-plan" class="planOne">
+              <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon" />
+              <h3>Arcade</h3>
+              <span class="monthly">$09/mo</span>
+            </label>
+          </div>
+          <div class="plan">
+            <input type="checkbox" id="advanced-plan" style="display: none" />
+            <label for="advanced-plan" class="planTwo">
+              <img
+                src="./assets/images/icon-advanced.svg"
+                alt="Advanced Icon"
+              />
+              <h3>Advanced</h3>
+              <span class="monthly">$12/mo</span>
+            </label>
+          </div>
+          <div class="plan">
+            <input type="checkbox" id="pro-plan" style="display: none" />
+            <label for="pro-plan" class="planThree">
+              <img src="./assets/images/icon-pro.svg" alt="Pro Icon" />
+              <h3>Pro</h3>
+              <span class="monthly">$15/mo</span>
+            </label>
+          </div>
+        </div>
+        <div class="planType">
+          <text>Monthly</text>
+          <div class="forCheck">
+            <input type="checkbox" id="check" style="display: none" />
+            <label for="check" class="button"></label>
+          </div>
+          <text>Yearly</text>
+        </div>
+        <div class="buttons">
+          <button class="back">Go Back</button>
+          <button id="next" onclick="getInputValue()" class="Two">
+            Next Step
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 end -->
+
+      <!-- Step 3 start -->
+
+      <div class="container-three">
+        <h1>Pick add-ons</h1>
+        <p>Add-ons help enhance your gaming experience.</p>
+        <div class="add-ons">
+          <div class="online-service">
+            <div>
+              <input type="checkbox" id="service" />
+              <label for="service" class="online">
+                <h3>Online service</h3>
+                <p>Access to multiplayer games</p>
+              </label>
+            </div>
+            <span>+$1/mo</span>
+          </div>
+          <div class="larger-storage">
+            <div>
+              <input type="checkbox" id="storage" />
+              <label for="storage" class="larger">
+                <h3>Larger storage</h3>
+                <p>Extra 1TB of cloud save</p>
+              </label>
+            </div>
+            <span>+$2/mo</span>
+          </div>
+          <div class="customizable-profile">
+            <div>
+              <input type="checkbox" id="profile" />
+              <label for="profile" class="customizable">
+                <h3>Customizable Profile</h3>
+                <p>Custom theme on your profile</p>
+              </label>
+            </div>
+            <span>+$2/mo</span>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back more">Go Back</button>
+          <button id="next" class="Three">Next Step</button>
+        </div>
+      </div>
+
+      <!-- Step 3 end -->
+
+      <!-- Step 4 start -->
+
+      <div class="container-four">
+        <h1>Finishing up</h1>
+        <p style="margin-top: 15px">
+          Double-check everything looks OK before confirming.
+        </p>
+        <div class="change">
+          <div class="result"></div>
+          <hr />
+          <div class="price"></div>
+        </div>
+        <div class="total">
+          <p></p>
+          <h3></h3>
+        </div>
+        <div class="buttons">
+          <button class="back oneMore">Go Back</button>
+          <button id="next" class="Four">Confirm</button>
+        </div>
+      </div>
+
+      <!-- Step 4 end -->
+      <div class="container-five">
+        <span class="image">✔</span>
+        <h1>Thank you!</h1>
+        <p>
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>
+        <button id="next" class="refresh">Refresh</button>
+      </div>
+      <!-- Step 5 start -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

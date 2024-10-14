@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+  display: flex;
+}
+
+.sidebar {
+  background: url("./assets/images/bg-sidebar-desktop.svg") no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-width: 250px;
+  border-radius: 15px;
+  color: white;
+  gap: 40px;
+  height: 100vh;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  counter-reset: my-counter 0;
+}
+
+.sidebar #number {
+  display: flex;
+  align-items: center;
+  position: relative;
+  list-style-type: none;
+}
+
+.sidebar #number::before {
+  content: counter(my-counter);
+  counter-increment: my-counter 1;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 20px;
+}
+
+#plan {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#number div {
+  display: flex;
+  flex-direction: column;
+}
+
+#Step {
+  color: hsl(229, 24%, 87%);
+}
+
+.container-one {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+p {
+  color: hsl(231, 11%, 63%);
+}
+
+.error {
+  color: hsl(354, 84%, 57%);
+  font-weight: 500;
+  text-align: right;
+}
+
+.container-one div {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-one p {
+  margin-top: 30px;
+}
+
+input,
+input::placeholder {
+  color: hsl(231, 11%, 63%);
+  height: 50px;
+}
+
+input:focus {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+}
+
+input {
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid hsl(228, 100%, 84%);
+  padding-left: 15px;
+  font-size: 1rem;
+}
+
+h1 {
+  color: hsl(213, 96%, 18%);
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+
+label {
+  color: hsl(213, 96%, 18%);
+}
+
+#next {
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  background: hsl(213, 96%, 18%);
+  border: none;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.container-two {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+h3 {
+  color: hsl(213, 96%, 18%);
+}
+
+.container-two h1 {
+  margin-top: 60px;
+}
+
+#plans {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.plan {
+  display: flex;
+}
+
+.plan span {
+  color: hsl(231, 11%, 63%);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.planOne,
+.planTwo,
+.planThree {
+  height: 100%;
+  width: 150px;
+  border: 2px solid hsl(231, 11%, 63%);
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 20px;
+}
+
+.planOne img,
+.planTwo img,
+.planThree img {
+  height: 40px;
+  margin-bottom: 40px;
+  margin-right: 45px;
+}
+
+#arcade-plan:checked + label.planOne,
+#advanced-plan:checked + label.planTwo,
+#pro-plan:checked + label.planThree {
+  border: 2px solid hsl(228, 100%, 84%);
+  background-color: hsl(228, 100%, 97%);
+}
+
+.forCheck {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 40px;
+  position: relative;
+  background: hsl(213, 96%, 18%);
+  transition: 0.3s ease;
+}
+
+.button::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  background: white;
+  height: 14px;
+  width: 16px;
+  border-radius: 20px;
+  margin: 3px;
+}
+
+input:checked + .button::before {
+  transform: translateX(16px);
+}
+
+input:checked + .button {
+  background: gray;
+}
+
+.planType {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: hsl(228, 100%, 97%);
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: hsl(231, 11%, 63%);
+}
+
+.planType::after {
+  color: hsl(213, 96%, 18%);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: 160px;
+}
+
+.buttons + button {
+  margin-top: -40px;
+}
+
+.back {
+  background: none;
+  height: fit-content;
+  cursor: pointer;
+  margin-top: 50px;
+  border: none;
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+
+.container-three {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+  padding-top: 40px;
+  color: hsl(231, 11%, 63%);
+  width: 500px;
+}
+
+.container-three .add-ons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-three .add-ons .online-service,
+.larger-storage,
+.customizable-profile {
+  border: 1px solid gray;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.online-service div,
+.larger-storage div,
+.customizable-profile div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.add-ons div p {
+  color: hsl(231, 11%, 63%);
+}
+
+.add-ons div label {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+}
+
+.container-four {
+  display: none;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 30px;
+  color: hsl(231, 11%, 63%);
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.result span {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+}
+
+.change {
+  display: flex;
+  flex-direction: column;
+  background: hsl(229, 28%, 92%);
+  margin-top: 30px;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 6px;
+}
+
+.price div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.price span {
+  color: hsl(213, 91%, 30%);
+  font-weight: 500;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  border: 1px solid hsl(228, 100%, 84%);
+}
+
+.container-five {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.image {
+  height: 60px;
+  width: 60px;
+  background: hsl(354, 84%, 57%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.container-five p {
+  margin-top: 60px;
+  text-align: center;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    flex-direction: column;
+    background: hsl(228, 100%, 84%);
+    height: 100vh;
+  }
+  .sidebar {
+    height: 300px;
+    background: url("./assets/images/bg-sidebar-mobile.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  #number div {
+    display: none;
+  }
+  .container-one {
+    background: white;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 0 10px;
+  }
+  .error {
+    margin-top: 10px;
+  }
+  #next{
+    margin-bottom: -20px;
+  }
+  .container-two {
+    margin: 0 10px;
+    border-radius: 6px;
+    text-align: center;
+    background: white;
+    height: 100%;
+  }
+  .container-two h1 {
+    margin-top: 10px;
+  }
+  .container-two p {
+    margin-bottom: -80px;
+    margin-top: 0;
+  }
+  #plans {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+  .plan {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .planOne,
+  .planTwo,
+  .planThree {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+  }
+  .planOne img,
+  .planTwo img,
+  .planThree img {
+    margin: auto 0;
+  }
+  .planType {
+    margin: -40px 20px;
+    margin-bottom: -90px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .buttons {
+    padding: 30px;
+    margin: 0;
+  }
+  .container-three {
+    margin:  -10px auto 0;
+    border-radius: 6px;
+    text-align: center;
+    background: white;
+    height: 100%;
+    width: 90%;
+    padding: 10px;
+  }
+  .container-three h1 {
+    margin-top: 0;
+  }
+
+  .container-three p {
+    font-size: 14px;
+    text-align: center;
+  }
+  .add-ons{
+    gap: 10px;
+    margin-bottom: -45px;
+  }
+  .container-three h3{
+    font-size: 1rem;
+  }
+  .container-three .buttons{
+    margin-top: -25px;
+    margin-bottom: 0;
+  }
+  .container-four{
+    margin:  -10px auto 0;
+    border-radius: 6px;
+    text-align: center;
+    background: white;
+    height: 100%;
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .container-four .buttons{
+    margin-top: -50px;
+    margin-bottom: 0;
+  }
+  .total{
+    margin: 0 auto -20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container-four p{
+    margin-bottom: -20px;
+  }
+  .container-five {
+    background: white;
+    width: 300px;
+    margin: -160px auto;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 20px;
+  }
+}
